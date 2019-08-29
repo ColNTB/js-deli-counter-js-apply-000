@@ -1,25 +1,37 @@
 
-function takeANumber(line,names){
+function takeANumber(theLine,names){
   var welcome = "Welcome, ";
   var i = 0;
-  if(line.length>0){
-    i = line.length; 
+  if(theLine.length>0){
+    i = theLine.length; 
+    theLine[i]=names;
   }
-  if(line.length===0){
-      welcome += names + ". You are number 1 in line.";
-      line[i] = names; 
+  else{
+    theLine[i]=names; 
   }
-  else{ 
-    line[i] = names;
-    i++;
+    i++; 
         welcome += names + ". You are number " + i + " in line.";
-  }
   return welcome; 
 }
+
+var custNum = 1; 
+function takeANumber2(){
+  var welcome = "Welcome, you are customer " + custNum; 
+  console.log(welcome); 
+  custNum++
+  
+}
+takeANumber2();
+takeANumber2();
+takeANumber2(); 
+
+
+
+
 function nowServing(theLine){
   var serve = 'There is nobody waiting to be served!';
   if(theLine.length>0){
-  serve = "Currently serving " + theLine[0] + '.';
+  serve = 'Currently serving ' + theLine[0] +'.';
   }
   theLine.splice(0,1);
  
